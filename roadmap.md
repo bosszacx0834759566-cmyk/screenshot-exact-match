@@ -1,5 +1,5 @@
 # Roadmap
 
-- [x] Adapt GodHeimer's page layout and navigation to the Anduril / Palantir reference direction.
-- [x] Preserve flat black/white backgrounds, Orbitron, existing content, and unframed logos.
-- [x] Verify navigation and desktop/mobile presentation in the running page.
+- [ ] Refine GodHeimer into an Anduril-led industrial editorial experience.
+- [ ] Preserve flat black/white backgrounds, Orbitron, existing content, and unframed logos.
+- [ ] Verify section navigation, full-screen menu, and desktop/mobile presentation.
