@@ -145,11 +145,8 @@ function Index() {
               RobertCore is a space-to-ground communication infrastructure developed by GodHeimer Technologies. It is designed to maintain reliable data transmission between space and Earth under changing and often hostile atmospheric conditions.
             </p>
           </div>
-          <div className="reveal relative flex aspect-square w-full items-center justify-center border border-line-dark">
-            <Logo className="h-1/4 w-1/4 text-paper" />
-            {[["SPACE", "left-8 top-8"], ["LINK", "right-8 top-8"], ["GROUND", "left-8 bottom-8"], ["ADAPT", "right-8 bottom-8"]].map(([t, p]) => (
-              <span key={t} className={`absolute ${p} text-[10px] tracking-[0.3em] text-paper/50`}>[ {t} ]</span>
-            ))}
+          <div className="reveal flex aspect-square w-full items-center justify-center">
+            <Logo className="h-1/3 w-1/3 text-paper" />
           </div>
         </div>
       </section>
