@@ -90,17 +90,7 @@ function Index() {
       </header>
 
       {/* 1 HERO */}
-      <section id="top" className="relative flex min-h-screen items-end overflow-hidden grid-bg">
-        <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <div className="animate-orbit relative h-[110vmin] w-[110vmin] rounded-full border border-paper/10">
-            <span className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-paper" />
-          </div>
-          <div className="animate-orbit-rev absolute inset-[15%] rounded-full border border-dashed border-paper/10">
-            <span className="absolute bottom-0 left-1/2 h-1.5 w-1.5 -translate-x-1/2 translate-y-1/2 rounded-full bg-paper/70" />
-          </div>
-          <Logo className="absolute left-1/2 top-1/2 h-[22vmin] w-[22vmin] -translate-x-1/2 -translate-y-1/2 text-paper/[0.06]" />
-        </div>
-        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink to-transparent" />
+      <section id="top" className="relative flex min-h-screen items-end overflow-hidden bg-ink">
         <div className="relative mx-auto w-full max-w-[1400px] px-6 pb-20 md:px-12 md:pb-28">
           <p className="reveal mb-6 text-[10px] tracking-[0.4em] text-paper/50 uppercase">GodHeimer Technologies</p>
           <h1 className="reveal max-w-5xl text-4xl font-black leading-[1.05] tracking-tight uppercase md:text-7xl lg:text-8xl">
@@ -118,7 +108,7 @@ function Index() {
       </section>
 
       {/* 2 CHALLENGE */}
-      <section id="challenge" className="bg-paper text-ink py-32 md:py-48 grid-bg-light">
+      <section id="challenge" className="bg-paper text-ink py-32 md:py-48">
         <div className="mx-auto grid max-w-[1400px] gap-16 px-6 md:grid-cols-12 md:px-12">
           <div className="md:col-span-7">
             <Label n="01">The Problem</Label>
@@ -145,7 +135,7 @@ function Index() {
       </section>
 
       {/* 3 ROBERTCORE */}
-      <section id="robertcore" className="relative overflow-hidden py-32 md:py-48">
+      <section id="robertcore" className="relative overflow-hidden bg-ink py-32 md:py-48">
         <div className="mx-auto grid max-w-[1400px] items-center gap-20 px-6 md:grid-cols-2 md:px-12">
           <div>
             <Label n="02" dark>The System</Label>
@@ -155,17 +145,9 @@ function Index() {
               RobertCore is a space-to-ground communication infrastructure developed by GodHeimer Technologies. It is designed to maintain reliable data transmission between space and Earth under changing and often hostile atmospheric conditions.
             </p>
           </div>
-          <div className="reveal relative aspect-square w-full">
-            <div className="absolute inset-0 rounded-full border border-paper/10" />
-            <div className="animate-orbit absolute inset-[10%] rounded-full border border-dashed border-paper/20">
-              <span className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 -translate-y-1/2 bg-paper" />
-            </div>
-            <div className="absolute inset-[30%] rounded-full border border-paper/30" />
-            <div className="animate-beam absolute left-1/2 top-[10%] h-[40%] w-px -translate-x-1/2 bg-gradient-to-b from-paper to-transparent" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <Logo className="h-1/5 w-1/5 text-paper" />
-            </div>
-            {[["SPACE", "top-0 left-0"], ["LINK", "top-0 right-0"], ["GROUND", "bottom-0 left-0"], ["ADAPT", "bottom-0 right-0"]].map(([t, p]) => (
+          <div className="reveal relative flex aspect-square w-full items-center justify-center border border-line-dark">
+            <Logo className="h-1/4 w-1/4 text-paper" />
+            {[["SPACE", "left-8 top-8"], ["LINK", "right-8 top-8"], ["GROUND", "left-8 bottom-8"], ["ADAPT", "right-8 bottom-8"]].map(([t, p]) => (
               <span key={t} className={`absolute ${p} text-[10px] tracking-[0.3em] text-paper/50`}>[ {t} ]</span>
             ))}
           </div>
@@ -199,11 +181,7 @@ function Index() {
       </section>
 
       {/* 5 WEATHER */}
-      <section className="relative flex min-h-screen items-center overflow-hidden">
-        <div className="absolute inset-0 rain-bg" />
-        <div className="animate-drift cloud absolute -left-1/4 top-[10%] h-[50vh] w-[90vw]" />
-        <div className="animate-drift cloud absolute -right-1/4 bottom-[5%] h-[40vh] w-[80vw] [animation-delay:-9s]" />
-        <div className="animate-scan absolute inset-x-0 h-px bg-paper/30" />
+      <section className="relative flex min-h-screen items-center overflow-hidden bg-ink">
         <div className="relative mx-auto max-w-[1400px] px-6 text-center md:px-12">
           <Label n="04" dark>Atmosphere</Label>
           <h2 className="reveal text-4xl font-black uppercase md:text-8xl">Weather Changes<br />Everything</h2>
@@ -218,7 +196,7 @@ function Index() {
         <div className="mx-auto grid max-w-[1400px] gap-16 px-6 md:grid-cols-12 md:px-12">
           <div className="md:col-span-5">
             <Label n="05">Founder &amp; Leadership</Label>
-            <div className="reveal flex aspect-[4/5] items-center justify-center bg-ink grid-bg">
+            <div className="reveal flex aspect-[4/5] items-center justify-center bg-ink">
               <Logo className="h-1/4 w-1/4 text-paper" />
             </div>
           </div>
@@ -233,7 +211,7 @@ function Index() {
       </section>
 
       {/* CONTACT */}
-      <footer id="contact" className="grid-bg py-32">
+      <footer id="contact" className="bg-ink py-32">
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
           <Label n="06" dark>Contact &amp; Follow</Label>
           <h2 className="reveal text-4xl font-black uppercase md:text-7xl">Get in Touch</h2>
