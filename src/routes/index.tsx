@@ -123,9 +123,9 @@ function Index() {
             </p>
           </div>
         </div>
-        <div className="mx-auto mt-24 grid max-w-[1400px] grid-cols-2 border-t border-line-light px-6 md:grid-cols-4 md:px-12">
+        <div className="mx-auto mt-24 grid max-w-[1400px] grid-cols-2 px-6 md:grid-cols-4 md:px-12">
           {["Clouds", "Rain", "Fog", "Turbulence"].map((t, i) => (
-            <div key={t} className="reveal border-b border-r border-line-light py-10 pr-6 first:border-l-0 md:border-b-0">
+            <div key={t} className="reveal py-10 pr-6">
               <div className="text-[10px] tracking-[0.3em] text-ink/40">0{i + 1}</div>
               <div className="mt-4 text-lg font-bold uppercase tracking-wider">{t}</div>
               <div className="mt-2 text-[10px] tracking-[0.2em] text-ink/50 uppercase">Link disruption</div>
