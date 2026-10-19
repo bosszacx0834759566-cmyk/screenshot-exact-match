@@ -95,6 +95,13 @@ function Index() {
         </div>
       </section>
 
+      <section id="robertcore" className="section-space bg-ink">
+        <div className="site-container">
+          <Label n="01">RobertCore / The System</Label>
+          <div className="product-layout mt-14 grid items-center gap-12 lg:grid-cols-12"><div className="min-w-0 lg:col-span-7"><p className="reveal mb-5 text-xs uppercase text-paper/60">Resilient by design.</p><h2 className="product-title reveal">RobertCore.</h2><p className="body-copy reveal mt-8 max-w-xl text-paper/70">RobertCore is a space-to-ground communication infrastructure developed by GodHeimer Technologies. It is designed to maintain reliable data transmission between space and Earth under changing and often hostile atmospheric conditions.</p><SectionLink href="#adaptive" className="reveal mt-9">Our adaptive approach</SectionLink></div><div className="reveal flex items-center justify-center py-8 lg:col-span-5"><Logo className="product-symbol" /></div></div>
+        </div>
+      </section>
+
       <section id="challenge" className="section-space bg-paper text-ink">
         <div className="site-container">
           <Label n="02">The Challenge</Label>
@@ -103,24 +110,17 @@ function Index() {
         </div>
       </section>
 
-      <section id="robertcore" className="section-space bg-ink">
-        <div className="site-container">
-          <Label n="01">RobertCore / The System</Label>
-          <div className="product-layout mt-14 grid items-center gap-12 lg:grid-cols-12"><div className="min-w-0 lg:col-span-7"><p className="reveal mb-5 text-xs uppercase text-paper/60">Resilient by design.</p><h2 className="product-title reveal">RobertCore.</h2><p className="body-copy reveal mt-8 max-w-xl text-paper/70">RobertCore is a space-to-ground communication infrastructure developed by GodHeimer Technologies. It is designed to maintain reliable data transmission between space and Earth under changing and often hostile atmospheric conditions.</p><SectionLink href="#adaptive" className="reveal mt-9">Our adaptive approach</SectionLink></div><div className="reveal flex items-center justify-center py-8 lg:col-span-5"><Logo className="product-symbol" /></div></div>
-        </div>
-      </section>
-
-      <section id="adaptive" className="section-space bg-paper text-ink">
+      <section id="adaptive" className="section-space bg-ink text-paper">
         <div className="site-container">
           <Label n="03">Our Philosophy</Label>
           <h2 className="statement-title reveal mt-12 max-w-6xl">Communication Must Adapt to the Environment.</h2>
-          <div className="mt-16 grid gap-12 md:grid-cols-3">{[["Sense", "Understand changing atmospheric conditions in real time."], ["Decide", "No single method performs under every condition."], ["Adapt", "Respond intelligently to keep the link alive."]].map(([t, d], i) => <div key={t} className="reveal"><div className="flex items-center justify-between"><span className="text-[10px] text-ink/40">0{i + 1}</span><ArrowRight className="h-4 w-4 text-ink/40" aria-hidden="true" /></div><h3 className="mt-6 text-2xl sm:text-3xl">{t}</h3><p className="body-copy mt-5 max-w-xs text-ink/60">{d}</p></div>)}</div>
-          <p className="body-copy reveal mt-16 max-w-2xl text-ink/60">A single communication method cannot always perform under every condition. The future requires systems that can understand changing environments and adapt intelligently.</p>
+          <div className="mt-16 grid gap-12 md:grid-cols-3">{[["Sense", "Understand changing atmospheric conditions in real time."], ["Decide", "No single method performs under every condition."], ["Adapt", "Respond intelligently to keep the link alive."]].map(([t, d], i) => <div key={t} className="reveal"><div className="flex items-center justify-between"><span className="text-[10px] text-paper/60">0{i + 1}</span><ArrowRight className="h-4 w-4 text-paper/60" aria-hidden="true" /></div><h3 className="mt-6 text-2xl sm:text-3xl">{t}</h3><p className="body-copy mt-5 max-w-xs text-paper/70">{d}</p></div>)}</div>
+          <p className="body-copy reveal mt-16 max-w-2xl text-paper/70">A single communication method cannot always perform under every condition. The future requires systems that can understand changing environments and adapt intelligently.</p>
         </div>
       </section>
 
-      <section className="section-space bg-ink">
-        <div className="site-container"><Label n="04">Atmosphere</Label><div className="mt-10 grid gap-10 lg:grid-cols-12"><h2 className="section-title reveal lg:col-span-7">Weather Changes<br />Everything.</h2><p className="body-copy reveal text-paper/60 lg:col-span-4 lg:col-start-9">Clouds, rain, and atmospheric conditions can severely affect how information travels between space and Earth. These challenges demand communication systems specifically engineered to respond to real-world conditions — not ideal ones.</p></div></div>
+      <section className="section-space bg-paper text-ink">
+        <div className="site-container"><Label n="04">Atmosphere</Label><div className="mt-10 grid gap-10 lg:grid-cols-12"><h2 className="section-title reveal lg:col-span-7">Weather Changes<br />Everything.</h2><p className="body-copy reveal text-ink/70 lg:col-span-4 lg:col-start-9">Clouds, rain, and atmospheric conditions can severely affect how information travels between space and Earth. These challenges demand communication systems specifically engineered to respond to real-world conditions — not ideal ones.</p></div></div>
       </section>
 
       <section id="leadership" className="section-space bg-paper text-ink">
