@@ -28,8 +28,8 @@ function Logo({ className = "" }: { className?: string }) {
 }
 
 const nav = [
-  ["Challenge", "challenge"],
   ["RobertCore", "robertcore"],
+  ["Challenge", "challenge"],
   ["Adaptive", "adaptive"],
   ["Leadership", "leadership"],
   ["Contact", "contact"],
@@ -61,19 +61,19 @@ function Index() {
   return (
     <main className="company-page bg-ink font-display text-paper">
       <a href="#challenge" className="sr-only focus:not-sr-only focus:fixed focus:left-5 focus:top-5 focus:z-[100] focus:bg-paper focus:p-4 focus:text-ink">Skip to content</a>
-      <header className="sticky top-0 z-50 border-b border-line-light bg-paper text-ink">
-        <div className="site-container flex h-[72px] items-center justify-between gap-6">
-          <Button variant="editorial" asChild className="h-auto gap-3 p-0"><a href="#top" aria-label="GodHeimer home"><Logo className="h-8 w-8" /><span className="text-sm font-bold">GODHEIMER<span className="mt-0.5 block text-[8px] font-normal">TECHNOLOGIES</span></span></a></Button>
-          <nav aria-label="Main navigation" className="hidden items-center gap-7 lg:flex">
-            {nav.map(([label, id]) => <Button key={id} variant="editorial" asChild className={`h-auto p-0 text-[11px] ${active === id ? "opacity-100" : "opacity-50"}`}><a href={`#${id}`} aria-current={active === id ? "location" : undefined}>{label}{id === "contact" && <ArrowUpRight aria-hidden="true" />}</a></Button>)}
+      <header className="site-header sticky top-0 z-50 border-b border-line-light bg-paper text-ink">
+        <div className="site-container flex h-20 items-center justify-between gap-6">
+          <Button variant="editorial" asChild className="brand-link h-auto gap-3 p-0"><a href="#top" aria-label="GodHeimer home"><Logo className="brand-symbol" /><span className="text-sm font-bold">GODHEIMER<span className="mt-0.5 block text-[8px] font-normal">TECHNOLOGIES</span></span></a></Button>
+          <nav aria-label="Main navigation" className="ml-auto hidden items-center gap-9 lg:flex">
+            {nav.filter(([, id]) => ["robertcore", "leadership", "contact"].includes(id)).map(([label, id]) => <Button key={id} variant="editorial" asChild className={`nav-link h-auto p-0 text-[11px] uppercase ${active === id ? "opacity-100" : "opacity-70"}`}><a href={`#${id}`} aria-current={active === id ? "location" : undefined}>{label}{id === "contact" && <ArrowUpRight aria-hidden="true" />}</a></Button>)}
           </nav>
           <Dialog.Root open={open} onOpenChange={setOpen}>
-            <Dialog.Trigger asChild><Button variant="editorial" size="icon" className="lg:hidden" aria-label="Open menu"><Menu /></Button></Dialog.Trigger>
+            <Dialog.Trigger asChild><Button variant="editorial" className="ml-3 h-11 gap-4 p-0" aria-label="Open menu"><span className="hidden text-[10px] uppercase sm:inline">Menu</span><Menu /></Button></Dialog.Trigger>
             <Dialog.Portal>
               <Dialog.Overlay className="fixed inset-0 z-[60] bg-ink" />
-              <Dialog.Content aria-describedby={undefined} className="fixed inset-0 z-[61] flex flex-col overflow-y-auto bg-ink px-6 pb-8 pt-6 font-display text-paper">
-                <div className="flex items-center justify-between"><Dialog.Title className="text-sm font-bold">GODHEIMER</Dialog.Title><Dialog.Close asChild><Button variant="editorial" size="icon" aria-label="Close menu"><X /></Button></Dialog.Close></div>
-                <nav aria-label="Mobile navigation" className="my-auto flex flex-col gap-7 py-16">{nav.map(([label, id], i) => <Button variant="editorial" asChild key={id} className="editorial-link text-xl"><a href={`#${id}`} onClick={() => setOpen(false)}><span><span className="mr-4 text-xs opacity-40">/0{i + 1}</span>{label}</span><ArrowUpRight /></a></Button>)}</nav>
+              <Dialog.Content aria-describedby={undefined} className="site-container fixed inset-0 z-[61] flex max-w-none flex-col overflow-y-auto bg-ink pb-8 pt-6 font-display text-paper">
+                <div className="flex items-center justify-between"><Dialog.Title className="flex items-center gap-3 text-sm font-bold"><Logo className="h-8 w-8" />GODHEIMER</Dialog.Title><Dialog.Close asChild><Button variant="editorial" size="icon" aria-label="Close menu"><X /></Button></Dialog.Close></div>
+                <nav aria-label="Section navigation" className="menu-navigation my-auto flex flex-col gap-7 py-16">{nav.map(([label, id], i) => <Button variant="editorial" asChild key={id} className="editorial-link menu-link"><a href={`#${id}`} onClick={() => setOpen(false)}><span className="flex items-center gap-5"><span className="text-xs opacity-40">/0{i + 1}</span>{label}</span><ArrowUpRight /></a></Button>)}</nav>
                 <a href="mailto:contact@godheimer.com" className="text-xs opacity-60">contact@godheimer.com</a>
               </Dialog.Content>
             </Dialog.Portal>
@@ -81,23 +81,23 @@ function Index() {
         </div>
       </header>
 
-      <section id="top" className="hero-section bg-ink">
+      <section id="top" className="hero-section bg-paper text-ink">
         <div className="site-container">
-          <div className="reveal mb-9 flex items-center justify-between gap-6 text-[10px] uppercase"><span>Space-to-ground communication</span><span className="hidden opacity-50 sm:block">Engineered for the real world</span></div>
-          <h1 className="hero-title reveal">GodHeimer<br />Technologies.</h1>
+          <div className="reveal mb-12 flex items-center justify-between gap-6 text-[10px] uppercase"><span>Space-to-ground communication</span><span className="hidden opacity-60 sm:block">Engineered for the real world / 01</span></div>
+          <h1 className="hero-title reveal">GodHeimer<span className="hero-title-secondary">Technologies.</span></h1>
         </div>
         <div className="site-container pb-10 pt-12">
           <div className="reveal grid gap-8 lg:grid-cols-12 lg:items-end">
-            <p className="text-xl leading-snug sm:text-3xl lg:col-span-6">Bridging Space and Earth.<br /><span className="text-paper/50">Reliably.</span></p>
-            <div className="lg:col-span-6"><p className="body-copy max-w-lg text-paper/60">We build resilient communication infrastructure between space and Earth — designed to perform even when the environment works against it.</p><SectionLink href="#robertcore" className="mt-6">Discover RobertCore</SectionLink></div>
+            <p className="hero-statement lg:col-span-7">Bridging Space and Earth.<br /><span className="text-ink/55">Reliably.</span></p>
+            <div className="lg:col-span-4 lg:col-start-9"><p className="body-copy max-w-lg text-ink/70">We build resilient communication infrastructure between space and Earth — designed to perform even when the environment works against it.</p><SectionLink href="#robertcore" className="mt-7">Discover RobertCore</SectionLink></div>
           </div>
-          <div className="mt-10 flex items-center justify-between border-t border-line-dark pt-5 text-[10px]"><span className="text-paper/40">SPACE / EARTH / CONNECTION</span><SectionLink href="#challenge" down>Explore</SectionLink></div>
+          <div className="mt-12 flex items-center justify-between border-t border-line-light pt-5 text-[10px]"><span className="text-ink/60">SPACE / EARTH / CONNECTION</span><SectionLink href="#robertcore" down>Explore the system</SectionLink></div>
         </div>
       </section>
 
       <section id="challenge" className="section-space bg-paper text-ink">
         <div className="site-container">
-          <Label n="01">The Challenge</Label>
+          <Label n="02">The Challenge</Label>
           <div className="mt-10 grid gap-10 lg:grid-cols-12"><h2 className="section-title reveal lg:col-span-7">The Challenge of<br className="hidden lg:block" /> Space-to-Earth Links</h2><div className="reveal lg:col-span-4 lg:col-start-9"><p className="body-copy text-ink/60">Traditional laser communication is highly efficient, yet extremely sensitive to weather. Clouds, rain, fog, and atmospheric turbulence can interrupt the link entirely.</p><p className="body-copy mt-7 font-semibold">In critical missions, any interruption is unacceptable.</p></div></div>
           <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">{["Clouds", "Rain", "Fog", "Turbulence"].map((t, i) => <div key={t} className="reveal min-w-0"><span className="text-[10px] text-ink/40">0{i + 1}</span><h3 className="mt-5 break-words text-sm font-medium sm:text-xl">{t}</h3><p className="mt-3 text-[10px] text-ink/50">Link disruption</p></div>)}</div>
         </div>
@@ -105,15 +105,15 @@ function Index() {
 
       <section id="robertcore" className="section-space bg-ink">
         <div className="site-container">
-          <Label n="02">The System</Label>
-          <div className="mt-10 grid items-center gap-12 lg:grid-cols-12"><div className="min-w-0 lg:col-span-8"><p className="reveal mb-5 text-xs text-paper/50">Introducing</p><h2 className="product-title reveal">RobertCore.</h2><p className="body-copy reveal mt-8 max-w-xl text-paper/60">RobertCore is a space-to-ground communication infrastructure developed by GodHeimer Technologies. It is designed to maintain reliable data transmission between space and Earth under changing and often hostile atmospheric conditions.</p><SectionLink href="#adaptive" className="reveal mt-9">Our adaptive approach</SectionLink></div><div className="reveal flex items-center justify-center py-8 lg:col-span-4"><Logo className="h-40 w-40 sm:h-56 sm:w-56" /></div></div>
+          <Label n="01">RobertCore / The System</Label>
+          <div className="product-layout mt-14 grid items-center gap-12 lg:grid-cols-12"><div className="min-w-0 lg:col-span-7"><p className="reveal mb-5 text-xs uppercase text-paper/60">Resilient by design.</p><h2 className="product-title reveal">RobertCore.</h2><p className="body-copy reveal mt-8 max-w-xl text-paper/70">RobertCore is a space-to-ground communication infrastructure developed by GodHeimer Technologies. It is designed to maintain reliable data transmission between space and Earth under changing and often hostile atmospheric conditions.</p><SectionLink href="#adaptive" className="reveal mt-9">Our adaptive approach</SectionLink></div><div className="reveal flex items-center justify-center py-8 lg:col-span-5"><Logo className="product-symbol" /></div></div>
         </div>
       </section>
 
       <section id="adaptive" className="section-space bg-paper text-ink">
         <div className="site-container">
           <Label n="03">Our Philosophy</Label>
-          <h2 className="section-title reveal mt-10 max-w-5xl">Communication Must Adapt to the Environment.</h2>
+          <h2 className="statement-title reveal mt-12 max-w-6xl">Communication Must Adapt to the Environment.</h2>
           <div className="mt-16 grid gap-12 md:grid-cols-3">{[["Sense", "Understand changing atmospheric conditions in real time."], ["Decide", "No single method performs under every condition."], ["Adapt", "Respond intelligently to keep the link alive."]].map(([t, d], i) => <div key={t} className="reveal"><div className="flex items-center justify-between"><span className="text-[10px] text-ink/40">0{i + 1}</span><ArrowRight className="h-4 w-4 text-ink/40" aria-hidden="true" /></div><h3 className="mt-6 text-2xl sm:text-3xl">{t}</h3><p className="body-copy mt-5 max-w-xs text-ink/60">{d}</p></div>)}</div>
           <p className="body-copy reveal mt-16 max-w-2xl text-ink/60">A single communication method cannot always perform under every condition. The future requires systems that can understand changing environments and adapt intelligently.</p>
         </div>
